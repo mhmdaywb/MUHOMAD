@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Project v1</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #eee; }
+        .box { background: white; width: 300px; margin: 50px auto; padding: 20px; border-radius: 10px; }
+        #list { text-align: left; }
+        .item { background: #f9f9f9; margin: 5px; padding: 5px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>My Team Project</h3>
+    <input type="text" id="in" placeholder="Type here...">
+    <button onclick="add()">Add</button>
+    <div id="list"></div>
+</div>
+
+<script>
+    function add() {
+        var val = document.getElementById('in').value;
+        if (val !== "") {
+            var d = document.createElement('div');
+            d.className = 'item';
+            d.innerHTML = val;
+            document.getElementById('list').appendChild(d);
+            document.getElementById('in').value = "";
+        }
+    }
